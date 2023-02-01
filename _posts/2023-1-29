@@ -1,0 +1,40 @@
+## The basic grammar of go
+
+Go is a statically typed, concurrent programming language developed by Google. The basic grammar of Go language includes: 
+Variables, Types, Functions, Control structures, Arrays and slices, Maps, Structs
+
+### Variables
+
+Variables in Go are declared using the "var" keyword followed by the variable name and its type.
+
+
+### Types
+
+Go has several built-in types such as string, int, float64, bool, etc.
+
+
+### Functions
+
+Functions in Go are declared using the "func" keyword followed by the function name, parameters and the return type.
+
+### Control structures
+
+Go has control structures such as "if-else", "for" loops and "switch" statements.
+
+
+### Arrays and slices
+
+Go has arrays and slices which are used to store collections of values.
+
+### Maps
+
+Go has maps which are key-value pairs used for efficient lookups.
+
+
+### Structs
+
+Go has structs which are user-defined types that allow grouping of values together.
+
+
+
+
