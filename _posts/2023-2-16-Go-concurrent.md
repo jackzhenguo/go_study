@@ -1,3 +1,5 @@
+Today blog I will talk about go concurrent. 
+
 ### Introduction
 
 One of the most exciting characters of GO langauge is its parallel running to finish the task in a very high speed. 
