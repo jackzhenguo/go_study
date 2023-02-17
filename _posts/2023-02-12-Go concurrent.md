@@ -89,6 +89,23 @@ Each goroutine runs in parallel with the main goroutine and prints the numbers f
 
 The sync.WaitGroup is used to wait for both goroutines to complete before the main goroutine terminates.
 
+### Challenges
+
+Although Go is designed to make concurrency easier, concurrent programming can still be challenging in any language. 
+
+Here are some of the difficulties I have thought for Go language concurrent programming:
+
+1. Concurrency bugs: Concurrent programs can have race conditions, deadlocks. And concurrency bugs are usually difficult to detect and debug. Go provides tools like `channels`, `mutexes`, and the `go` keyword to help prevent these issues, but it's still possible to write concurrent code that has bugs.
+
+2. Synchronization and communication: In a concurrent program, it's important to synchronize access to shared data and communicate between concurrent processes. This can be challenging to get right, especially when multiple processes need to access the same data at the same time.
+
+3. Performance: Concurrent programming can have performance issues, particularly if there is contention for shared resources like locks or channels. It's important to design concurrent programs carefully to minimize contention and maximize parallelism.
+
+
+Overall, concurrent programming in Go can be challenging, but with careful design and attention to detail, it's possible to write efficient, scalable, and reliable concurrent programs in Go.
+
+
+
 ### Summary
 
 In this blog, I summary two examples of GO concurrent program. We can create concurrent program by using `Goroutines` and `sync.WaitGroup`
