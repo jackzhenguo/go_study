@@ -1,7 +1,4 @@
-In this blog, let's add more features to previous calculator by go, such as 
-
-- input exception checking
-- support more input operator, etc.
+In this blog, let's add one of more features to previous calculator by go, such as exception handling.
 
 
 #### support input exception 
@@ -113,7 +110,7 @@ func main() {
 ```
 
 
-#### let's debug it after adding exception handling
+#### let's run it after adding exception handling
 
 ```
 
@@ -126,4 +123,27 @@ Enter the operator (+, -, *, /): e
 Enter the second number: s
 Error converting input to number: strconv.ParseFloat: parsing "d": invalid syntax
 ```
+
+Yes. It shows `Error converting input to number`, and that's the exact exception handling we add in v1.1 of code.
+
+```
+num1Float, err := strconv.ParseFloat(num1, 64)
+    if err != nil {
+        fmt.Println("Error converting input to number:", err)
+        return
+    }
+```
+
+#### Challenges
+
+Adding exceptions in Go can be challenging compared to other programming languages that have built-in support for exceptions, such as Java or Python. Instead, Go relies on error handling through the use of return values, which can make the code more verbose.
+
+Since Go relies on returning errors as values, it can lead to cluttered code with many if statements to check for errors. This can make the code harder to read and maintain.
+
+Sometimes, I forget to handle an error or ignore an error when it is returned, which can cause bugs or unexpected behavior.
+
+
+
+
+
 
