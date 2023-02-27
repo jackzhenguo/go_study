@@ -34,7 +34,9 @@ It will prompts us error convering if we perform parseFloat convertion.
 
 ```
 
-Put it all together, we will get the v1.1 of calculator after we add exception handling.
+Put it all together, we will get the v1.1 of calculator after we add exception handling:
+
+[calculator_v1.1.go](https://github.com/jackzhenguo/go_study/blob/my-pages/src/calculator_v1.1.go)
 
 ```
 package main
