@@ -4,7 +4,38 @@ In this blog, let's add more features to previous calculator by go, such as
 - support more input operator, etc.
 
 
-#### input exception support
+#### support input exception 
+
+To support handling of invalid user input, we can add error handling to the existing code. 
+
+Here's an updated version of the program with error handling:
+
+case 1: 
+It will prompts us `nil` exception if we don't input valid data
+
+```
+num1, err := reader.ReadString('\n')
+    if err != nil {
+        fmt.Println("Error reading input:", err)
+        return
+    }
+```
+
+case 2：
+
+It will prompts us error convering if we perform parseFloat convertion.
+
+```    
+    num1Float, err := strconv.ParseFloat(num1, 64)
+    if err != nil {
+        fmt.Println("Error converting input to number:", err)
+        return
+    }
+
+```
+
+Put it all together, we will get the v1.1 of calculator after we add exception handling.
+
 ```
 package main
 
@@ -80,7 +111,7 @@ func main() {
 ```
 
 
-
+#### let's debug it after adding exception handling
 
 ```
 
