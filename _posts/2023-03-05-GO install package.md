@@ -56,8 +56,27 @@ After careful research, I found that I had to create a separate project file fir
 Only when this file exists can I install the package successfully using "go get" command.
 
 
+### Summary
 
+To install third-party packages in Go, you can use the "go get" command followed by the package import path. However, in order to manage dependencies in Go, it's recommended to use modules. A module is a collection of related Go packages that are versioned together.
 
+To use modules, you need to first create a new Go module for your project. You can do this by navigating to your project directory and running the "go mod init" command followed by your module name:
+
+```
+go mod init example.com/myproject
+```
+
+This command creates a "go.mod" file that lists the module and its dependencies.
+
+After creating the "go.mod" file, you can then use the "go get" command to download and install the "fyne.io/fyne/v2" package and its dependencies:
+
+```
+go get fyne.io/fyne/v2
+```
+
+This command will download and install the package and its dependencies in your Go module.
+
+It's important to note that the package and its dependencies will be installed in the "pkg" and "mod" directories in your Go workspace, rather than in the project directory.
 
 
 
