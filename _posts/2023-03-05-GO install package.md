@@ -1,5 +1,7 @@
 
-Today at this blog let's begin to implement a simple calculator with GUI interface in GO language.
+Today at this blog let's begin to study how to install third-party package in GO and it's very important!
+
+Because next it is the basics that we implement a simple calculator with GUI interface in GO language.
 
 ### install third-party package
 
