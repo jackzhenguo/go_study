@@ -1,91 +1,91 @@
-## Go lanauage introduction
-Go, also known as Golang, is an open-source programming language developed by Google. It is a statically typed, compiled, concurrent language with syntax similar to C, and has high performance and a simple code structure. It is designed for system programming and cloud computing, and supports a concurrent programming model.
+### Tasks
+- What skills/knowledge that you had learned earlier in the semester were useful in this project
+- What additional skills/knowledge you had to learn to complete your tasks
+- The biggest challenge you faced during mini-project.
 
-### Advantages
+### Pre learned
 
-Go has several advantages, including:
+I worked in the company for several years before, developed some commercial software, and used languages such as Python and Java, so when I was learning GO language to develop this project, the process and ideas of developing a software in the past can be applied to the development of this mini project.
 
-- Concurrency: Go has built-in concurrency support, making it easy to create programs that can perform multiple tasks simultaneously.
+The specific technologies involved, such as widgets creation, layout, and style adjustment under the `Fyne` framework (a GUI framework of GO language), are similar to those under Python's `tkinter` and `PyQt5`. Although the API will be slightly different, the overall UI layout, widget creation, and object-oriented development call ideas are the same.
 
-- Simplicity: Go has a simple, easy-to-learn syntax and a small set of keywords, making it easy to read and understand code written in Go.
+For example, in `Fyne` framework, following codes will create a `Label` widget, and `Move` method will set it to a position of coordinate at `(200, 500)`
 
-- Performance: Go is designed to be fast, with a low-level memory model that allows for efficient memory usage and a light-weight runtime.
+```
+inputBookIDLabel := widget.NewLabel("input book ID")
+inputBookIDLabel.Move(fyne.NewPos(200, 500))
+```  
 
-- Scalability: Go is built to scale, making it a good choice for large-scale projects and systems.
+Also, `NewEntry` method will create a Text input widget as following: 
 
-- Garbage collection: Go has built-in garbage collection, which automatically handles memory management, reducing the chance of memory leaks and other related issues.
+```
+myEntry := widget.NewEntry()
+myEntry.Move(fyne.NewPos(350, 500))
+```  
 
-- Cross-platform: Go can be compiled to run on multiple platforms, including Windows, Mac, and Linux, making it easy to deploy Go programs on different operating systems.
+### Additional skills
 
-### Disadvantages
+One of most popular GUI frameworks of GO language is Fyne. I studied basic use for this framework in order to finish this project well. 
 
-Go has some disadvantages that include:
+Fyne is an open source cross-platform GUI (Graphical User Interface) toolkit and app development framework written in the Go programming language. It allows developers to easily create native applications that can run on desktop (Windows, macOS, Linux), web, and mobile platforms with a consistent look and feel.
 
-- Limited OOP Support: Go is not an object-oriented language in the traditional sense. It does not have classes or inheritance, which can make it harder to structure large programs.
+One of the main benefits of Fyne is that it compiles natively to each platform it targets, which means that Fyne applications are fast and have a small memory footprint.
 
-- No Generics: Go does not have support for generic data types, which can make it harder to write reusable code.
+To create an entry and a layout in Fyne, you can follow these steps:
 
-- Limited Standard Library: While the standard library is good for some basic functionality, it is not as extensive as those of other languages such as Python or Java.
-
-- Lack of third-party libraries: Go has a relatively small ecosystem compared to other languages, which means that there are fewer third-party libraries available to use.
-
-No built-in exception handling: Go does not have built-in exception handling, which can make it harder to handle errors and exceptions in the code.
-
-Not good fit for certain domains: Go is not a good fit for certain domains such as GUI development, Data Science, and Machine Learning.
-
-It's worth noting that, despite these disadvantages, Go is still a powerful and efficient language that has a lot to offer, and it's well suited for certain types of projects and use cases.
-
-### Applications
-
-Go is well suited for a variety of applications, including:
-
-- Networking and Systems Programming: Go's built-in concurrency support and low-level memory model make it well suited for networking and systems programming tasks, such as building web servers, proxies, and networking tools.
-
-- Cloud and Distributed Systems: Go's support for concurrency and scalability make it a good choice for building cloud-based services and distributed systems.
-
-- Containerization and Orchestration: Go is the language behind some popular containerization and orchestration tools such as Docker, Kubernetes, and etcd.
-
-- Microservices: Go's small runtime and fast performance make it well suited for building microservices, which are small, self-contained services that can be easily deployed and scaled.
-
-- Network Automation: Go has good support for interfacing with network devices, making it a good choice for building network automation tools.
-
-- Game development: Go's support for low-level memory manipulation and cross-compiling capabilities make it a good choice for game development
-
-It's worth noting that Go's capabilities are not limited to these, it can be used in many other fields, it is a versatile and powerful language that can be used for a variety of tasks.
-
-
-
-### Go run environment
-
-To create a run environment for Go, you will need to install the Go programming language on your computer. Here are the general steps you can follow:
-
-1. Download the Go installer for your operating system from the official Go website (https://golang.org/dl/).
-2. Run the installer and follow the prompts to install Go. The installer will typically install Go to a location such as /usr/local/go on Linux and macOS or c:\Go on Windows.
-3. Once the installation is complete, you'll need to set up some environment variables. For example, on Linux or macOS, you can add the following lines to your shell profile file (such as ~/.bash_profile or ~/.bashrc) to set the GOPATH and PATH environment variables:
-
-```shell
-Copy code
-export GOPATH=$HOME/go
-export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
+Import the Fyne package:
+```
+import "fyne.io/fyne/v2"
 ```
 
+Create a new Fyne application:
 
-
-### Go hello world
-
-Vim to build a new file: hello_world.go, then at shell window to execute the command: 
-
-```she
-go run hello_world.go
+```
+app := fyne.NewApp()
 ```
 
-```go
-package main
+Create a new window for the application:
 
-import "fmt"
-
-func main() {
-    fmt.Println("Hello, World!")
-}
+```
+win := app.NewWindow("My App")
 ```
 
+Create a new entry widget:
+
+```
+entry := widget.NewEntry()
+```
+
+```
+layout := container.NewVBox(entry)
+```
+
+```
+win.SetContent(layout)
+```
+
+```
+win.ShowAndRun()
+```
+
+This code will create a new Fyne application with a window titled "My App", an entry widget, and a layout that contains the entry widget. The layout is then set as the content of the window, and the window is shown.
+
+
+### biggest challenge
+
+The biggest challenge is Fyne's layout.
+
+When I add different controls to the interface, the different controls appear in the position I want, and it is cumbersome to adjust.
+
+When the position of appearance is finally adjusted, the size of the control will unexpectedly become very small due to different layout methods.
+
+For example, we use a table control in our micro-project. When using some different layout methods, there are originally 10 rows of data in the table, but only 1 row is displayed, and the subsequent rows can only be seen in turn by Scroll to down.
+
+This is the biggest challenge, and I use the layout `Move` method to solve this problem.
+
+```
+checkoutBtn.Resize(fyne.NewSize(200, 40))
+checkoutBtn. Move(fyne. NewPos(600, 500))
+```
+
+Overall, this mini project is very useful and thanks so much.
